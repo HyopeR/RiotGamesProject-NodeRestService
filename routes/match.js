@@ -15,4 +15,17 @@ router.get('/history/:accountId', (req, res, next) => {
     });
 });
 
+/* Summoner get Match Detail -> Paramater: matchId */
+router.get('/detail/:matchId', (req, res, next) => {
+    const {matchId } = req.params;
+
+    Match.getMatchDetail(req.session.region, matchId, (error, result) => {
+        if(error)
+            res.json(error);
+        else
+            res.json(result);
+    });
+});
+
+
 module.exports = router;
