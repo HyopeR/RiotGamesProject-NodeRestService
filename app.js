@@ -15,6 +15,7 @@ const regionController = require('./middleware/regionController');
 
 const indexRouter = require('./routes/index');
 const regionRouter = require('./routes/region');
+const otherRouter = require('./routes/other');
 const summonerRouter = require('./routes/summoner');
 const matchRouter = require('./routes/match');
 const leagueRouter = require('./routes/league');
@@ -41,6 +42,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/api/region', regionRouter);
+app.use('/api/other', otherRouter);
 app.use('/api/:region/summoner', regionController, summonerRouter);
 app.use('/api/:region/match', regionController, matchRouter);
 app.use('/api/:region/league', regionController, leagueRouter);
