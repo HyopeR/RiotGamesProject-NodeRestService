@@ -6,7 +6,6 @@ const Champion = require('../models/Champion');
 /* Get All Champions Data */
 router.get('/:version/:language', (req, res, next) => {
     const { version, language } = req.params;
-    console.log(version, language);
 
     Champion.getChampions(version, language, (error, result) => {
         if(error)

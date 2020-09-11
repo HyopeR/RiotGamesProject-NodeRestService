@@ -20,6 +20,7 @@ const summonerRouter = require('./routes/summoner');
 const matchRouter = require('./routes/match');
 const leagueRouter = require('./routes/league');
 const championRouter = require('./routes/champion');
+const itemRouter = require('./routes/item');
 
 const app = express();
 
@@ -47,6 +48,7 @@ app.use('/api/:region/summoner', regionController, summonerRouter);
 app.use('/api/:region/match', regionController, matchRouter);
 app.use('/api/:region/league', regionController, leagueRouter);
 app.use('/api/:region/champion', regionController, championRouter);
+app.use('/api/:region/item', regionController, itemRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
