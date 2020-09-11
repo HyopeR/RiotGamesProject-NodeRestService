@@ -14,6 +14,18 @@ router.get('/languages', (req, res, next) => {
     });
 });
 
+/* Get Versions */
+router.get('/versions', (req, res, next) => {
+
+    Other.getVersions((error, result) => {
+        if(error)
+            res.json(error);
+        else
+            res.json(result);
+    });
+});
+
+
 /* Get Seasons */
 router.get('/seasons', (req, res, next) => {
 

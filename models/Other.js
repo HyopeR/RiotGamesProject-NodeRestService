@@ -17,6 +17,22 @@ Other.getLanguages = async(result) => {
         .catch(err => result(null, err));
 };
 
+Other.getVersions = async(result) => {
+    const request = await fetch(
+        'https://ddragon.leagueoflegends.com/api/versions.json',
+        {
+            method: 'GET',
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Riot-Token': process.env.API_KEY
+            }
+        })
+        .then(res => res.json())
+        .then(json => result(null, json))
+        .catch(err => result(null, err));
+};
+
 
 Other.getSeasons = async(result) => {
     const request = await fetch(
