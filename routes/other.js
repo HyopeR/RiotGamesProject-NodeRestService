@@ -48,5 +48,16 @@ router.get('/queues', (req, res, next) => {
     });
 });
 
+/* Get Maps */
+router.get('/maps', (req, res, next) => {
+
+    Other.getMaps((error, result) => {
+        if(error)
+            res.json(error);
+        else
+            res.json(result);
+    });
+});
+
 
 module.exports = router;
